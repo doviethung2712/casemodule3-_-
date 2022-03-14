@@ -14,7 +14,7 @@
             @foreach ($posts as $key => $post)
                 <tr>
                     <td>{{ $key + 1 }}</td>
-                    <td><img src="{{ asset('storage/'.$post->img) }}" alt=""></td>
+                    <td><img width="100px" src="{{ asset('storage/'.$post->img) }}" alt=""></td>
                     {{-- <td></td> --}}
                     <td>{{ $post->content }}</td>
                 </tr>

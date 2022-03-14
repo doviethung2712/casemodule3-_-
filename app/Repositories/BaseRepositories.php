@@ -28,8 +28,5 @@ abstract class BaseRepositories implements BaseInterface
     {
         return DB::table($this->table)->where('id', $id)->delete();
     }
-    public function store($data)
-    {
-         DB::table($this->table)->insert($data);
-    }
+
 }

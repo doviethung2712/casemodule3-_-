@@ -28,11 +28,7 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
-        $data = $request->only('content','user_id');
-        $fileName = time().'_'.$request->file('img')->getClientOriginalName();
-        $path = $request->file('img')->storeAs("images",$fileName,"public");
-        $data["img"] = $path;
-        DB::table('posts')->insert($data);
+        $this->postRepository->store($request);
         return redirect()->route('home');
     }
 
